@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+{% endblock %}
+
+{% block body %}
+<h1> Project Evaluation Form </h1>
+	
+<form action = "http://0.0.0.0:5000/projEval" method="post">
+<div>	
+	<label for "score1" >Technical Accuracy:</label>
+	<input type="radio" name="score1" value="red" required> 1
+	<input type="radio" name="score1" value="green" required> 2
+	<input type="radio" name="score1" value="blue" required> 3
+</div>
+
+<div>
+	<label for "score1" >Creativity and Innovation:</label>
+	<input type="radio" name="score2" value="uno" required> 1
+</div>
+</form>
+{% endblock %}
+
