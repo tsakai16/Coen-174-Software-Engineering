@@ -1,0 +1,83 @@
+{% extends 'evals/base.html' %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<h1> Create Session </h1>
+<b1> Input student names here </b2> 
+<form action = "http://0.0.0.0:5000/createSess" method="post">
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var maxField = 10; //Input fields increment limitation
+            var addButton = $('.add_button'); //Add button selector
+            var wrapper = $('.field_wrapper'); //Input field wrapper
+            var fieldHTML = '<div><input type="text" name="field_name[]" value=""/><a href="javascript:void(0);" class="remove_button">Remove Field</a></div>'; //New input field html 
+            var x = 1; //Initial field counter is 1
+            
+            //Once add button is clicked
+            $(addButton).click(function(){
+                //Check maximum number of input fields
+                if(x < maxField){ 
+                    x++; //Increment field counter
+                    $(wrapper).append(fieldHTML); //Add field html
+                }
+            });
+            
+            //Once remove button is clicked
+            $(wrapper).on('click', '.remove_button', function(e){
+                e.preventDefault();
+                $(this).parent('div').remove(); //Remove field html
+                x--; //Decrement field counter
+            });
+        });
+        </script>
+
+<div class="field_wrapper">
+    <div>
+        <input type="text" name="field_name[]" value=""/>
+        <a href="javascript:void(0);" class="add_button" title="Add field">Add Field</a>
+    </div>
+</div>
+
+
+<b1> Input judge names here </b2> 
+        <script type="text/javascript">
+            $(document).ready(function(){
+                var maxField = 10; //Input fields increment limitation
+                var addButton = $('.add_button1'); //Add button selector
+                var wrapper = $('.field_wrapper1'); //Input field wrapper
+                var fieldHTML = '<div><input type="text" name="field_name[]" value=""/><a href="javascript:void(0);" class="remove_button1">Remove Field</a></div>'; //New input field html 
+                var x1 = 1; //Initial field counter is 1
+                
+                //Once add button is clicked
+                $(addButton).click(function(){
+                    //Check maximum number of input fields
+                    if(x1 < maxField){ 
+                        x1++; //Increment field counter
+                        $(wrapper).append(fieldHTML); //Add field html
+                    }
+                });
+                
+                //Once remove button is clicked
+                $(wrapper).on('click', '.remove_button1', function(e){
+                    e.preventDefault();
+                    $(this).parent('div').remove(); //Remove field html
+                    x1--; //Decrement field counter
+                });
+            });
+            </script>
+
+<div class="field_wrapper1">
+    <div>
+        <input type="text" name="field_name[]" value=""/>
+        <a href="javascript:void(0);" class="add_button1" title="Add field">Add Field</a>
+    </div>
+</div>
+
+<input type="submit" value="Submit">
+</form>
+{% endblock %}
