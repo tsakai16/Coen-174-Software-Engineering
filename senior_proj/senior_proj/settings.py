@@ -31,7 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'crispy_forms',
+	'crispy_forms',
 	'evals.apps.EvalsConfig',
 	'django.contrib.admin',
     'django.contrib.auth',
@@ -122,3 +122,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = 'projEval'
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+LOGIN_URL = 'login'

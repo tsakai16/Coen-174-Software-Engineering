@@ -7,155 +7,154 @@
 {% block content %}
 <h1> Session Evaluation Form </h1>
 	
-<form action = "http://127.0.0.1:8000/evals/sessEval" method="post">
+<form action = "{% url 'sessEval' %}" method="POST", action = /"sessEval"/>
+{% csrf_token %}
 <div>	
 	<label for "disc" >Discipline:</label>
 	<br>
-	<input type="radio" name="disc" value="bio" required> Bio Engineering
-	<input type="radio" name="disc" value="civ" required> Civil Engineering
-	<input type="radio" name="disc" value="coen" required> Computer Engineering
-	<input type="radio" name="disc" value="elen" required> Electrical Engineering
-	<input type="radio" name="disc" value="mech" required> Mechanical Engineering
-	<input type="radio" name="disc" value="int" required> Interdisciplinary
+	<input type="radio" name="disc" value="Bio Engineering" required> Bio Engineering
+	<input type="radio" name="disc" value="Civil Engineering" required> Civil Engineering
+	<input type="radio" name="disc" value="Computer Engineering" required> Computer Engineering
+	<input type="radio" name="disc" value="Electrical Engineering" required> Electrical Engineering
+	<input type="radio" name="disc" value="Mechanical Engineering" required> Mechanical Engineering
+	<input type="radio" name="disc" value="Interdiciplinary" required> Interdisciplinary
 </div>
 	<br><br>
 <div>
 	<label for "score1" >Do you find evidence that our students have the ability to apply knowledge of mathematics, science, and engineering?</label>
 	<br>
-	<input type="radio" name="score1" value="no" required> No basis for judgment
-	<input type="radio" name="score1" value="one" required> 1 = Very Weak
-	<input type="radio" name="score1" value="two" required> 2 = Weak
-	<input type="radio" name="score1" value="three" required> 3 = Moderate
-	<input type="radio" name="score1" value="four" required> 4 = Strong
-	<input type="radio" name="score1" value="five" required> 5 = Very Strong
+	<input type="radio" name="score1" value=0 required> No basis for judgment
+	<input type="radio" name="score1" value=1 required> 1 = Very Weak
+	<input type="radio" name="score1" value=2 required> 2 
+	<input type="radio" name="score1" value=3 required> 3 
+	<input type="radio" name="score1" value=4 required> 4 
+	<input type="radio" name="score1" value=5 required> 5 = Very Strong
 
 </div>
 	<br><br>
 <div>
 	<label for "score2" >Do you find evidence that our students have the ability to design and conduct experiments or tests, as well as to analyze and interpret the results?</label>
-	<input type="radio" name="score2" value="no" required> No basis for judgment
-	<input type="radio" name="score2" value="one" required> 1 = Very Weak
-	<input type="radio" name="score2" value="two" required> 2 = Weak
-	<input type="radio" name="score2" value="three" required> 3 = Moderate
-	<input type="radio" name="score2" value="four" required> 4 = Strong
-	<input type="radio" name="score2" value="five" required> 5 = Very Strong
+	<input type="radio" name="score2" value=0 required> No basis for judgment
+	<input type="radio" name="score2" value=1 required> 1 = Very Weak
+	<input type="radio" name="score2" value=2 required> 2 = Weak
+	<input type="radio" name="score2" value=3 required> 3 = Moderate
+	<input type="radio" name="score2" value=4 required> 4 = Strong
+	<input type="radio" name="score2" value=5 required> 5 = Very Strong
 
 </div>
 	<br><br>
 <div>
 	<label for "score3" >Do you find evidence that our students have the ability to design a system, component or process to meet desired needs</label>
-	<input type="radio" name="score3" value="no" required> No basis for judgment
-	<input type="radio" name="score3" value="one" required> 1 = Very Weak
-	<input type="radio" name="score3" value="two" required> 2 = Weak
-	<input type="radio" name="score3" value="three" required> 3 = Moderate
-	<input type="radio" name="score3" value="four" required> 4 = Strong
-	<input type="radio" name="score3" value="five" required> 5 = Very Strong
+	<input type="radio" name="score3" value=0 required> No basis for judgment
+	<input type="radio" name="score3" value=1 required> 1 = Very Weak
+	<input type="radio" name="score3" value=2 required> 2 = Weak
+	<input type="radio" name="score3" value=3 required> 3 = Moderate
+	<input type="radio" name="score3" value=4 required> 4 = Strong
+	<input type="radio" name="score3" value=5 required> 5 = Very Strong
 
 </div>
 	<br><br>
 <div>
 	<label for "score4" >Do you find evidence that our students have the ability to function well on teams?</label>
-	<input type="radio" name="score4" value="no" required> No basis for judgment
-	<input type="radio" name="score4" value="one" required> 1 = Very Weak
-	<input type="radio" name="score4" value="two" required> 2 = Weak
-	<input type="radio" name="score4" value="three" required> 3 = Moderate
-	<input type="radio" name="score4" value="four" required> 4 = Strong
-	<input type="radio" name="score4" value="five" required> 5 = Very Strong
+	<input type="radio" name="score4" value=0 required> No basis for judgment
+	<input type="radio" name="score4" value=1 required> 1 = Very Weak
+	<input type="radio" name="score4" value=2 required> 2 = Weak
+	<input type="radio" name="score4" value=3 required> 3 = Moderate
+	<input type="radio" name="score4" value=4 required> 4 = Strong
+	<input type="radio" name="score4" value=5 required> 5 = Very Strong
 
 </div>
 	<br><br>
 <div>
 	<label for "score5" >Do you find evidence that our students have the ability to identify, formulate and solve engineering problems?</label>
-	<input type="radio" name="score5" value="no" required> No basis for judgment
-	<input type="radio" name="score5" value="one" required> 1 = Very Weak
-	<input type="radio" name="score5" value="two" required> 2 = Weak
-	<input type="radio" name="score5" value="three" required> 3 = Moderate
-	<input type="radio" name="score5" value="four" required> 4 = Strong
-	<input type="radio" name="score5" value="five" required> 5 = Very Strong
+	<input type="radio" name="score5" value=0 required> No basis for judgment
+	<input type="radio" name="score5" value=1 required> 1 = Very Weak
+	<input type="radio" name="score5" value=2 required> 2 = Weak
+	<input type="radio" name="score5" value=3 required> 3 = Moderate
+	<input type="radio" name="score5" value=4 required> 4 = Strong
+	<input type="radio" name="score5" value=5 required> 5 = Very Strong
 
 </div>
 	<br><br>
 <div>
 	<label for "score6" >Do you find evidence that our studentshave an understanding of professional and ethical responsibility?</label>
-	<input type="radio" name="score6" value="no" required> No basis for judgment
-	<input type="radio" name="score6" value="one" required> 1 = Very Weak
-	<input type="radio" name="score6" value="two" required> 2 = Weak
-	<input type="radio" name="score6" value="three" required> 3 = Moderate
-	<input type="radio" name="score6" value="four" required> 4 = Strong
-	<input type="radio" name="score6" value="five" required> 5 = Very Strong
+	<input type="radio" name="score6" value=0 required> No basis for judgment
+	<input type="radio" name="score6" value=1 required> 1 = Very Weak
+	<input type="radio" name="score6" value=2 required> 2 = Weak
+	<input type="radio" name="score6" value=3 required> 3 = Moderate
+	<input type="radio" name="score6" value=4 required> 4 = Strong
+	<input type="radio" name="score6" value=5 required> 5 = Very Strong
 
 </div>
 	<br><br>
 <div>
 	<label for "score7" >Do you find evidence that our students have the ability to communicate effectively? </label>
-	<input type="radio" name="score7" value="no" required> No basis for judgment
-	<input type="radio" name="score7" value="one" required> 1 = Very Weak
-	<input type="radio" name="score7" value="two" required> 2 = Weak
-	<input type="radio" name="score7" value="three" required> 3 = Moderate
-	<input type="radio" name="score7" value="four" required> 4 = Strong
-	<input type="radio" name="score7" value="five" required> 5 = Very Strong
+	<input type="radio" name="score7" value=0 required> No basis for judgment
+	<input type="radio" name="score7" value=1 required> 1 = Very Weak
+	<input type="radio" name="score7" value=2 required> 2 = Weak
+	<input type="radio" name="score7" value=3 required> 3 = Moderate
+	<input type="radio" name="score7" value=4 required> 4 = Strong
+	<input type="radio" name="score7" value=5 required> 5 = Very Strong
 
 </div>
 	<br><br>
 <div>
 	<label for "score8" >Do you find evidence that our students understand the impact of engineering solutions in a societal context?</label>
-	<input type="radio" name="score8" value="no" required> No basis for judgment
-	<input type="radio" name="score8" value="one" required> 1 = Very Weak
-	<input type="radio" name="score8" value="two" required> 2 = Weak
-	<input type="radio" name="score8" value="three" required> 3 = Moderate
-	<input type="radio" name="score8" value="four" required> 4 = Strong
-	<input type="radio" name="score8" value="five" required> 5 = Very Strong
+	<input type="radio" name="score8" value=0 required> No basis for judgment
+	<input type="radio" name="score8" value=1 required> 1 = Very Weak
+	<input type="radio" name="score8" value=2 required> 2 = Weak
+	<input type="radio" name="score8" value=3 required> 3 = Moderate
+	<input type="radio" name="score8" value=4 required> 4 = Strong
+	<input type="radio" name="score8" value=5 required> 5 = Very Strong
 
 </div>
 	<br><br>
 <div>
 	<label for "score9" >Do you find evidence that our students have the ability and recognize the need for independent learningoutside the classroom context?</label>
-	<input type="radio" name="score9" value="no" required> No basis for judgment
-	<input type="radio" name="score9" value="one" required> 1 = Very Weak
-	<input type="radio" name="score9" value="two" required> 2 = Weak
-	<input type="radio" name="score9" value="three" required> 3 = Moderate
-	<input type="radio" name="score9" value="four" required> 4 = Strong
-	<input type="radio" name="score9" value="five" required> 5 = Very Strong
+	<input type="radio" name="score9" value=0 required> No basis for judgment
+	<input type="radio" name="score9" value=1 required> 1 = Very Weak
+	<input type="radio" name="score9" value=2 required> 2 = Weak
+	<input type="radio" name="score9" value=3 required> 3 = Moderate
+	<input type="radio" name="score9" value=4 required> 4 = Strong
+	<input type="radio" name="score9" value=5 required> 5 = Very Strong
 
 </div>
 	<br><br>
 <div>
 	<label for "score10" >Do you find evidence that our students have knowledge of contemporary engineering practice?</label>
-	<input type="radio" name="score10" value="no" required> No basis for judgment
-	<input type="radio" name="score10" value="one" required> 1 = Very Weak
-	<input type="radio" name="score10" value="two" required> 2 = Weak
-	<input type="radio" name="score10" value="three" required> 3 = Moderate
-	<input type="radio" name="score10" value="four" required> 4 = Strong
-	<input type="radio" name="score10" value="five" required> 5 = Very Strong
+	<input type="radio" name="score10" value=0 required> No basis for judgment
+	<input type="radio" name="score10" value=1 required> 1 = Very Weak
+	<input type="radio" name="score10" value=2 required> 2 = Weak
+	<input type="radio" name="score10" value=3 required> 3 = Moderate
+	<input type="radio" name="score10" value=4 required> 4 = Strong
+	<input type="radio" name="score10" value=5 required> 5 = Very Strong
 
 </div>
 	<br><br>
 <div>
 	<label for "score11" >Do you find evidence that our students have an ability to use modern engineering tools for analysis and design?</label>
-	<input type="radio" name="score11" value="no" required> No basis for judgment
-	<input type="radio" name="score11" value="one" required> 1 = Very Weak
-	<input type="radio" name="score11" value="two" required> 2 = Weak
-	<input type="radio" name="score11" value="three" required> 3 = Moderate
-	<input type="radio" name="score11" value="four" required> 4 = Strong
-	<input type="radio" name="score11" value="five" required> 5 = Very Strong
+	<input type="radio" name="score11" value=0 required> No basis for judgment
+	<input type="radio" name="score11" value=1 required> 1 = Very Weak
+	<input type="radio" name="score11" value=2 required> 2 = Weak
+	<input type="radio" name="score11" value=3 required> 3 = Moderate
+	<input type="radio" name="score11" value=4 required> 4 = Strong
+	<input type="radio" name="score11" value=5 required> 5 = Very Strong
 
 </div>
 	<br><br>
 <div>
 	<label for "score12" >How do the skills and competencies that you observed today compare with those demonstrated by entry-level engineers from other institutions?</label>
-	<input type="radio" name="score12" value="no" required> No basis for judgment
-	<input type="radio" name="score12" value="one" required> 1 = Much Worse
-	<input type="radio" name="score12" value="two" required> 2 = Worse
-	<input type="radio" name="score12" value="three" required> 3 = About the Same
-	<input type="radio" name="score12" value="four" required> 4 = Better
-	<input type="radio" name="score12" value="five" required> 5 = Much Better
+	<input type="radio" name="score12" value=0 required> No basis for judgment
+	<input type="radio" name="score12" value=1 required> 1 = Much Worse
+	<input type="radio" name="score12" value=2 required> 2 = Worse
+	<input type="radio" name="score12" value=3 required> 3 = About the Same
+	<input type="radio" name="score12" value=4 required> 4 = Better
+	<input type="radio" name="score12" value=5 required> 5 = Much Better
 
-</div>
-
-
-
-
-
+</div><br><br>
+    <label for "comments">Other Comments</label>
+	<textarea rows="5" cols="80" name ="comment">
+	Enter comments here...</textarea>
 
 <input type = "submit">
 </form>

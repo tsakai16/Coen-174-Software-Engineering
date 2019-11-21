@@ -1,6 +1,15 @@
 {% extends "evals/base.html" %}
 {% load crispy_forms_tags %}
 {% block content %}
-	<h1> {{ evals.username }} </h1>
+	<div class="content-section">
+      <div class="media">
+        <img class="rounded-circle account-img" src="{{ evals.profile.image.url }}">
+        <div class="media-body">
+          <h2 class="account-heading">{{ evals.username }}</h2>
+          <p class="text-secondary">{{ evals.email }}</p>
+        </div>
+      </div>
+      <!-- FORM HERE -->
+    </div>
 {% endblock content %}
 
