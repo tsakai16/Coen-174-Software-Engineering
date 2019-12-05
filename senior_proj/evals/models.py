@@ -1,4 +1,5 @@
 from django.db import models
+from django import forms
 from django.contrib.auth.models import User
 
 
@@ -11,9 +12,9 @@ from django.contrib.auth.models import User
 		#return self.groupName
 
 class TeamScore(models.Model):
-    teamName = models.CharField(max_length=50,default='NA')
-    #judgeName = models.CharField(max_length=50,default='NA')
+    teamName = models.CharField(max_length=20,default='NA')
     sess = models.CharField(max_length=50,default='NA')
+    judgeName = models.CharField(max_length=20,default='NA')
     techAcc = models.IntegerField()
     createIn = models.IntegerField()
     analyt = models.IntegerField()
@@ -33,6 +34,7 @@ class TeamScore(models.Model):
 
 #class Judge(models.Model):
 class SessionScore(models.Model):
+    judgeName = models.CharField(max_length=20,default='NA')
     discipline = models.CharField(max_length=50,default='NA')
     score1 = models.IntegerField()
     score2= models.IntegerField()

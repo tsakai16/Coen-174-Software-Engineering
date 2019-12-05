@@ -4,11 +4,13 @@ from django.http import HttpResponse
 from .models import Session, TeamScore,GroupMember, SessionScore
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
-#from .forms import UserRegisterForm
+#from django.views.generic import ListView
 
+#from .forms import UserRegisterForm
 @login_required
 def projEval(request):
     sessions= Session.objects.all()
+    judgeName = 'judgeName' in request.POST and request.POST['judgeName']
     sessName = 'dropdown1' in request.POST and request.POST['dropdown1']
     grpName = 'dropdown2' in request.POST and request.POST['dropdown2']
     score1 = 'score1' in request.POST and request.POST['score1']
@@ -32,6 +34,7 @@ def projEval(request):
 
 @login_required
 def sessEval(request):
+    judgeName = 'judgeName' in request.POST and request.POST['judgeName']
     disc = 'disc' in request.POST and request.POST['disc']
     score1 = 'score1' in request.POST and request.POST['score1']
     score2 = 'score2' in request.POST and request.POST['score2']
@@ -51,6 +54,9 @@ def sessEval(request):
     sess_scores.save()
     return render(request, 'evals/sessEval.html',{'title': 'Session Evaluation'})
 
+#class SessionScoreTable(ListView):
+  #  model = SessionScore
+  #  template_name='evals/tabularResults.html'
 
 def createSess(request):
 	return render(request, 'evals/createSess.html', {'title': "Create Session"})

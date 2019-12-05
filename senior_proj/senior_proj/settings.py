@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
 	'crispy_forms',
+    'django_tables2',
 	'evals.apps.EvalsConfig',
 	'django.contrib.admin',
     'django.contrib.auth',

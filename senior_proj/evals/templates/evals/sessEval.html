@@ -9,6 +9,11 @@
 	
 <form action = "{% url 'sessEval' %}" method="POST", action = /"sessEval"/>
 {% csrf_token %}
+<div>
+	<label for "judgeName">Judge Name:</label>
+	<input type="text" name ="judgeName" maxlength="20">
+</div>
+
 <div>	
 	<label for "disc" >Discipline:</label>
 	<br>
@@ -156,6 +161,6 @@
 	<textarea rows="5" cols="80" name ="comment">
 	Enter comments here...</textarea>
 
-<input type = "submit">
+<input type = "Submit">
 </form>
 {% endblock %}
